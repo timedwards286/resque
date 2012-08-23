@@ -19,8 +19,9 @@ module Resque
       @redis      = redis
 
       queues.each do |queue|
-        key = @redis.is_a?(Redis::Namespace) ? "#{@redis.namespace}:" : ""
-        key += queue.redis_name
+        #TME key = @redis.is_a?(Redis::Namespace) ? "#{@redis.namespace}:" : ""
+        #TME key += queue.redis_name
+        key = queue.redis_name
         @queue_hash[key] = queue
       end
     end
